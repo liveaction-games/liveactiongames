@@ -1,0 +1,139 @@
+/* Live Action Games – shared styles (aligned with Sudoku Daily app theme) */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #F8FAFC;
+  --color-text: #1A1D21;
+  --color-text-muted: #6B7280;
+  --color-heading: #1A1D21;
+  --color-link: #4A90E2;
+  --color-link-hover: #2563EB;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --max-width: 640px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --line-height: 1.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0F172A;
+    --color-text: #F9FAFB;
+    --color-text-muted: #9CA3AF;
+    --color-heading: #F9FAFB;
+    --color-link: #60A5FA;
+    --color-link-hover: #93C5FD;
+  }
+}
+
+body {
+  margin: 0;
+  padding: var(--space-24) var(--space-16);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: var(--line-height);
+  min-height: 100vh;
+}
+
+/* Optional: subtle background gradient (light blue tint in light mode) */
+body {
+  background: linear-gradient(180deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-link) 4%, var(--color-bg)) 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(180deg, var(--color-bg) 0%, color-mix(in srgb, var(--color-link) 6%, var(--color-bg)) 100%);
+  }
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-8);
+  color: var(--color-heading);
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: var(--space-24) 0 var(--space-8);
+  color: var(--color-heading);
+}
+
+h2:first-of-type {
+  margin-top: var(--space-16);
+}
+
+p, li {
+  margin: 0 0 var(--space-12);
+  color: var(--color-text);
+}
+
+ul {
+  margin: 0 0 var(--space-16);
+  padding-left: 20px;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-link-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+/* Back link (policy/terms pages) */
+.back {
+  display: inline-block;
+  margin-bottom: var(--space-24);
+}
+
+/* Home page: link group (Privacy Policy | Terms of Service) */
+.links {
+  margin-top: var(--space-24);
+}
+
+.links a {
+  display: inline-block;
+  margin-right: var(--space-16);
+  margin-bottom: var(--space-8);
+}
+
+.links a + a {
+  margin-left: 0;
+}
+
+/* Footer / muted note (home page “Questions?”) */
+.footer-note,
+.muted {
+  margin-top: var(--space-32);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* Policy/Terms: “Last updated” line */
+.last-updated {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-24);
+}
